@@ -13,6 +13,14 @@ psycopg = {extras = ["pool", "binary"], version = "*"}
 pydantic-settings = "*"
 greenlet = "*"
 loguru = "*"
+redis = "*"
+celery = "*"
+flower = "*"
+redisbeat = "*"
+jsonpickle = "*"
+fastapi-mail = "*"
+aiosmtplib = "*"
+email-validator = "*"
 
 [dev-packages]
 
