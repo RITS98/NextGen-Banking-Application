@@ -8,6 +8,7 @@ from sqlmodel.ext.asyncio.session import AsyncSession
 
 from backend.app.core.config import settings
 from backend.app.core.logging import get_logger
+from backend.app.core.model_registry import load_models
 
 
 logger = get_logger()
@@ -52,6 +53,9 @@ async def get_session() -> AsyncGenerator[AsyncSession, None]:
 
 async def init_db() -> None:
     try:
+        load_models()
+        logger.info("Database initialization with tables successful")
+
         max_retries = 3
         retry_delay = 2
 
