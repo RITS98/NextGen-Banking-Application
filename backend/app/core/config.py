@@ -36,4 +36,9 @@ class Settings(BaseSettings):
     RABBITMQ_PASSWORD: str = "guest"
 
 
+    OTP_EXPIRATION_MINUTES: int = 2 if ENVIRONMENT == "local" else 10
+    LOGIN_ATTEMPTS: int = 3
+    LOCKOUT_DURATION_MINUTES: int = 2 if ENVIRONMENT == "local" else 60
+
+
 settings = Settings()
